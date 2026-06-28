@@ -9,11 +9,13 @@ public abstract class SolicitudCompra {
     protected int idSolicitud;
     protected int idUsuario;
     protected String estado;
+    protected String justificacion;
     protected final ArrayList<DetalleSolicitud> detalles;
 
     public SolicitudCompra() {
         this.estado = "Borrador";
         this.detalles = new ArrayList<>();
+        this.justificacion = "";
     }
 
     public void agregarDetalle(DetalleSolicitud detalle) throws ValidacionException {
@@ -58,6 +60,14 @@ public abstract class SolicitudCompra {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getJustificacion() {
+        return justificacion;
+    }
+
+    public void setJustificacion(String justificacion) {
+        this.justificacion = justificacion;
     }
 
     public List<DetalleSolicitud> getDetalles() {

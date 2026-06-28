@@ -44,5 +44,9 @@ JOIN areas a ON u.id_area = a.id_area
 JOIN detalles_solicitud d ON s.id_solicitud = d.id_solicitud
 GROUP BY s.id_solicitud, a.nombre, u.nombre_completo, s.fecha_solicitud, s.estado;
 
+UPDATE solicitudes_compra
+SET estado = 'Autorizada'
+WHERE id_solicitud = 2;
+
 DELETE FROM detalles_solicitud
 WHERE id_detalle = 5 AND id_solicitud = 2;
